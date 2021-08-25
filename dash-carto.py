@@ -78,7 +78,7 @@ app.layout=html.Div([
 def interactive_graphing(value_genre):
     print(value_genre)
     dff = df[df["CHEF D'EQUIPE"]==value_genre]
-    fig = px.histogram(data_frame=dff, x="CANTON",y="POPULATION",title="Population estiméeH")
+    fig = px.histogram(data_frame=dff, x="CANTON",y="POPULATION",title="Population estimée")
     return fig
 
 if __name__=='__main__':
