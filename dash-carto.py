@@ -1,3 +1,4 @@
+
 import dash
 from dash.development.base_component import Component
 from dash_core_components.Dropdown import Dropdown
@@ -13,8 +14,8 @@ from dash.dependencies import Output, Input
 
 df = pd.read_excel("dagl.xlsx")
 #print(df)
+""""
 
-"""
 #print(df[:5]) # Affiche les 5 premières lignes
 #print(df.iloc[:5,[0,3]])  # Affiche les 5 premières lignes des colonnes 0 et 3
 
@@ -63,11 +64,25 @@ server = app.server
 
 app.layout=html.Div([
     html.H1("Population estimée par Chef d'equipe et par Quartier / Canton"),
+
+
+    #dcc.Graph(
+   # id = 'pie',
+   # figure = fig_bar
+ # ),
+
     dcc.Dropdown(id='genre-choice',
                  options=[{'label':x, 'value':x}
                  for x in sorted(df["CHEF D'EQUIPE"].unique())],
                  value='ABOUDOU Julien Komivi Sodjinè'#Choix par défaut
                  ),
+    html.H1("Canton"),
+    dcc.Dropdown(id='canton',
+                 options=[{'label':x, 'value':x}
+                 for x in sorted(df["CANTON"].unique())],
+                 value=''#Choix par défaut
+                 ),
+
     dcc.Graph(id='my-graph', figure={})
 ])
 
