@@ -1,5 +1,5 @@
 import pandas as pd
-import plotly
+#import plotly
 import plotly.express as px
 import dash
 import dash_table
@@ -7,9 +7,12 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Output, Input
 
+""""
 from dash.development.base_component import Component
 from dash_core_components.Dropdown import Dropdown
 from pandas.core.frame import DataFrame
+
+"""
 
 app = dash.Dash(__name__)
 #server = app.server
